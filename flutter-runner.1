@@ -1,0 +1,49 @@
+# NAME
+flutter-runner - A script to build and run Flutter apps for iOS and Android
+
+# SYNOPSIS
+flutter-runner [-r platform] [-b platform] [-e extra_flags]
+
+# DESCRIPTION
+This script automates the process of building and running Flutter apps for iOS and Android platforms. It handles platform-specific tasks such as moving problematic files, excluding dependencies, and modifying specific files before building or running the app.
+
+# OPTIONS
+-r platform
+    Run the app on the specified platform (ios or android)
+
+-b platform
+    Build the app for the specified platform (ios or android)
+
+-e extra_flags
+    Specify additional flags to pass to the Flutter command
+
+# EXAMPLES
+Run the app on iOS:
+    flutter-runner -r ios
+
+Build the app for Android:
+    flutter-runner -b android
+
+Run the app on Android with additional flags:
+    flutter-runner -r android -e "--flavor production"
+
+# FILES
+pubspec.yaml
+    Used to specify iOS-specific ignored files, ignored dependencies, and files to modify
+
+# ENVIRONMENT
+Requires Flutter SDK to be installed and in the system PATH.
+For iOS builds, requires Xcode and CocoaPods.
+For Android builds, requires Android SDK.
+
+# NOTES
+The script uses 'yq' for YAML parsing. Ensure it's installed and accessible in the PATH.
+
+# SEE ALSO
+flutter(1), pod(1), yq(1)
+
+# AUTHOR
+[Your Name or Organization]
+
+# BUGS
+Report bugs to [Your bug reporting email or URL]
